@@ -3,6 +3,10 @@
 %define SessionClass__Session 0x0067F2B4
 
 _Count_as_Civ_Evac_Check:
+%ifdef EVAC_IN_MP_WORKAROUND
+    mov  eax, 0
+    retn
+%else
     cmp  BYTE [SessionClass__Session], 0
     jnz  .Check_EvacInMP_Keyword
     jmp  .Normal_Function
@@ -22,3 +26,4 @@ _Count_as_Civ_Evac_Check:
     push edx
     push edi
     jmp  0x0041CB97
+%endif
