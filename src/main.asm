@@ -133,7 +133,11 @@ _str_version: db "3.03p-iB1v1",0
 %include "src/custom_missions.asm"
 %include "src/ally_shroud_reveal.asm"
 %include "src/ingame_chat_improvments.asm"
+%ifdef LIMIT_MULTIPLAYER_COUNTRIES
+%include "src/limit_multiplayer_countries.asm"
+%else
 %include "src/extra_multiplayer_countries.asm"
+%endif
 %include "src/aftermath_fast_buildspeed_option.asm"
 %include "src/optional_scorescreen.asm"
 %include "src/zoom_out_radar_by_default.asm"

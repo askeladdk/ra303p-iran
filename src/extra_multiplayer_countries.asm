@@ -1,3 +1,6 @@
+%ifdef LIMIT_MULTIPLAYER_COUNTRIES
+%error "Cannot limit and have extra multiplayer countries at the same time."
+%endif
 @HOOK 0x00513363 _Skirmish_Dialog_DropList_Add_Amount
 @HOOK 0x005070BF _Net_Join_Dialog_DropList_Add_Amount
 @HOOK 0x00513399 _Skirmish_Dialog_DropList_Add_Greece_Spain
