@@ -9,7 +9,7 @@
 %define    _Play_Movie_                                0x004A8DCC
 %define Play_Intro                                    0x004F55B0
 
-; TLF movies + sizzle3 and sizzle4
+; TLF movies + sizzle3, sizzle4 and sizzle5 + beta movies
 derp_str db "derp",0
 ALLX1_str db "ALLX1",0
 ALLX2_str db "ALLX2",0
@@ -39,6 +39,10 @@ TANESCP_str db "TANESCP",0
 TESLATNK_str db "TESLATNK",0
 SIZZLE3_str db "SIZZLE3",0
 SIZZLE4_str db "SIZZLE4",0
+SIZZLE5_str db "SIZZLE5",0
+APACHE_str db "APACHE",0
+UN_FLAG_str db "UN_FLAG",0
+UN_RED_str db "UN_RED",0
 
 str_playenglishintro db"PlayEnglishIntro",0
 ;str_redalert_ini db"REDALERT.INI",0
@@ -135,6 +139,7 @@ _Extra_Sneak_Peaks:
 
     Play_Movie 176 ; SIZZLE3.VQA
     Play_Movie 177 ; SIZZLE4.VQA
+    Play_Movie 178 ; SIZZLE5.VQA
     Play_Movie 162 ; INTROX.VQA
 
     jmp  0x004F5066
@@ -176,6 +181,10 @@ _CCINIClass_Get_VQType:
     Video_Name_To_Index TESLATNK_str, 175
     Video_Name_To_Index SIZZLE3_str, 176
     Video_Name_To_Index SIZZLE4_str, 177
+    Video_Name_To_Index SIZZLE5_str, 178
+    Video_Name_To_Index APACHE_str, 179
+    Video_Name_To_Index UN_FLAG_str, 180
+    Video_Name_To_Index UN_RED_str, 181
 
     jmp  0x00463804
 
@@ -212,6 +221,10 @@ _Play_Movie:
     Index_To_Video_Name TESLATNK_str, 175
     Index_To_Video_Name SIZZLE3_str, 176
     Index_To_Video_Name SIZZLE4_str, 177
+    Index_To_Video_Name SIZZLE5_str, 178
+    Index_To_Video_Name APACHE_str, 179
+    Index_To_Video_Name UN_FLAG_str, 180
+    Index_To_Video_Name UN_RED_str, 181
 
     pop  eax
     jmp  0x004A8DE8
